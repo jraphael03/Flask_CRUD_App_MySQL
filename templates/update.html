@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Update Account</title>
+</head>
+<body>
+<h2>Update Account</h2>    
+    <form action="/update/{{ account.id }}" method="POST">      <!-- Goes to the slash route in app.py -->
+        <input type="text" value="{{ account.name }}" name="name" >     <!-- Passing in the intial value -->
+        <input type="text" value="{{ account.balance }}" name="balance" >
+        <input type="submit" value="Update Account" >
+    </form>
+</body>
+</html>

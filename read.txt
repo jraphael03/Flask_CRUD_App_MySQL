@@ -1,0 +1,18 @@
+mkdir FlaskMySQL
+cd FlaskMySQL
+npm init -y
+npm install
+pip install flask
+pip install flask-sqlalchemy   // Connecter to mysql or you can use MySQL
+ 
+Inside of the package.json under the scripts section add
+"start": "python app.py"        // Can start with npm start now
+ 
+AFTER CREATING THE DATABASE IN APP.PY
+python
+from app import db
+db.create_all()
+exit();             // Should create the table in the database
+
+
+

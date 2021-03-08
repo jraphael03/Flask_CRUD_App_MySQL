@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Accounts</title>
+</head>
+<body>
+<h2>Accounts</h2>    
+{% if accounts | length > 0 %}       <!-- If accounts has a length greater than 0 display table if not do not display -->
+
+    <table border="1"cellpadding="0" cellspacing="0" >
+        <tr>
+            <th align="left">Id</th>
+            <th align="left">Name</th>
+            <th align="left" >Balance</th>
+            <th align="left" >Action</th>
+        </tr>
+        {% for accounts in accounts %}      <!-- variable on left is what we are pulling and the right is what we are assigning it as -->
+        <tr>
+            <td>{{ account.id }}</td>
+            <td>{{ account.name }}</td>
+            <td>{{ account.balance }}</td>
+            <td><a href="/delete/">{{ account.id }}Delete</a>&nbsp&nbsp    <!-- http://localhost/delete/id -->
+            <a href="/update/">{{ account.id }}Update</a>&nbsp&nbsp
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    <form action="" method="POST">      <!-- Goes to the slash route in app.py -->
+        <input type="text" name="name" placeholder="Name" >             <!-- Creating the value using name to match with database names -->
+        <input type="text" name="balance" placeholder="Balance" >
+        <input type="submit" value="Add Account" >
+    </form>
+</body>
+</html>
